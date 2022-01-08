@@ -1,0 +1,59 @@
+$white: #fff;
+$base-color: $crimson;
+
+/* Mixin's */  
+@mixin transition {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+@mixin corners ($radius) {
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    border-radius: $radius; 
+    -khtml-border-radius: $radius; 
+}
+
+body {
+    background-image: url(../Stopwatch//akatsuki\'s\ cloud.jpg);
+    background-size: 1550px 800px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.wrapper {
+    width: 800px;
+    margin: 30px auto;
+    color:white;
+    text-align:center;
+}
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+}
+
+#seconds, #tens{
+    font-size:30px;
+    color: black;
+}
+
+button{
+@include corners (5px);
+    color:$white;
+    border: solid 1px $white;
+    text-decoration:none;
+    cursor:pointer;
+    font-size:12px;
+    padding:18px 10px;
+    width:180px;
+    margin: 10px;
+    outline: none;
+&:hover{
+@include transition;
+	background:$white;
+	border: solid 1px $white;
+	color:$base-color;
+}}
